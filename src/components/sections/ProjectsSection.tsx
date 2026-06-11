@@ -1,5 +1,7 @@
 import { Folder, Shield, Server, Activity, Lock, Rocket, Github, LucideIcon } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import CrowdSafeImage from "@/assets/achievements/ach10 (2).png";
+import DermaScanImage from "@/assets/achievements/ach10 (1).png";
 
 interface Project {
   title: string;
@@ -10,6 +12,7 @@ interface Project {
   icon: LucideIcon;
   image?: string;
   github?: string;
+  live?: string;
 }
 
 const ProjectsSection = () => {
@@ -19,31 +22,36 @@ const ProjectsSection = () => {
 
   const projects: Project[] = [
     {
-      title: "Cloud-Based DDoS Protection System",
-      description: "A comprehensive DDoS protection system designed for cloud environments, developed as part of Smart India Hackathon 2024 for a DRDO problem statement.",
+      title: "Crowd-Safe",
+      description: "A comprehensive crowd safety and management system designed for real-time monitoring and incident detection. Provides secure handling of crowd data and emergency response coordination.",
       features: [
-        "Real-time traffic monitoring to detect abnormal request patterns",
-        "Automatic blocking and rate-limiting for malicious traffic",
-        "High availability and scalability architecture",
-        "Service reliability and uptime optimization",
+        "Real-time crowd density monitoring and analysis",
+        "Emergency alert and incident notification system",
+        "Data-driven insights for crowd management",
+        "Secure authentication and privacy compliance",
       ],
-      tools: ["Cloud Infrastructure", "Traffic Analysis", "Rate Limiting", "Security Protocols"],
-      highlight: "SIH 2024 - DRDO",
+      tools: ["React", "TypeScript", "Vercel", "Cloud Infrastructure"],
+      highlight: "Crowd Safety Solution",
       icon: Shield,
+      image: CrowdSafeImage,
+      live: "https://aumryx-crowd-safe-main.vercel.app/",
+      github: "https://github.com/rajansharma-123/AUMRYX_CrowdSafe  ",
     },
     {
-      title: "DefCom - Cross-Platform Chat App",
-      description: "A cross-platform chat and HQ dashboard application built with Expo (React Native) for the client and an Express + Socket.IO backend for real-time messaging.",
+      title: "Derma-Scan",
+      description: "An intelligent dermatological scanning and analysis application designed for skin condition assessment. Provides quick diagnostic insights with a user-friendly interface.",
       features: [
-        "Real-time group chat using Socket.IO",
-        "User registration and authentication",
-        "Message history stored in MongoDB",
-        "Admin/HQ routes and dashboard endpoints",
+        "Advanced skin condition analysis and detection",
+        "Real-time image processing and AI-powered assessment",
+        "Secure user authentication and data privacy",
+        "Comprehensive health insights and recommendations",
       ],
-      tools: ["React Native", "Expo", "Node.js", "Express.js", "Socket.IO", "MongoDB"],
-      highlight: "Full-Stack Development",
-      icon: Server,
-      github: "https://github.com/rajansharma-123/Defcom",
+      tools: ["React", "TypeScript", "AI/ML", "Vercel"],
+      highlight: "Healthcare Technology",
+      icon: Activity,
+      image: DermaScanImage,
+      live: "https://derma-scan-opal.vercel.app/login",
+      github: "https://github.com/rajansharma-123/DermaScan  ",
     },
   ];
 
@@ -91,24 +99,47 @@ const ProjectsSection = () => {
                     </span>
                   </div>
                 </div>
-                {/* GitHub Link */}
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
-                  >
-                    <Github className="w-4 h-4" />
-                    View Code
-                  </a>
-                )}
+                {/* Links */}
+                <div className="flex items-center gap-2">
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-primary/10 hover:bg-primary/20 transition-colors text-sm font-medium text-primary hover:text-primary"
+                    >
+                      <Rocket className="w-4 h-4" />
+                      Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium"
+                    >
+                      <Github className="w-4 h-4" />
+                      View Code
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* Description */}
               <p className="text-muted-foreground text-lg mb-6 group-hover:text-foreground/70 transition-colors duration-300">
                 {project.description}
               </p>
+
+              {project.image && (
+                <div className="mb-6 overflow-hidden rounded-3xl border border-border bg-black/10">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    className="w-full h-[260px] object-cover"
+                  />
+                </div>
+              )}
 
               {/* Features */}
               <div className="mb-6">
