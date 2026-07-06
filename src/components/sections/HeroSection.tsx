@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Shield, ChevronDown } from "lucide-react";
-import resume from "@/assets/achievements/Rajan_Sharma_Resume.pdf";
+import resume from "@/assets/achievements/rajan_sharma_CV.pdf";
 
 // Simple embed for dotlottie web component (loads player from CDN at runtime)
 
