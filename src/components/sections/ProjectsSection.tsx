@@ -35,7 +35,7 @@ const ProjectsSection = () => {
       icon: Shield,
       image: CrowdSafeImage,
       live: "https://aumryx-crowd-safe-main.vercel.app/",
-      github: "https://github.com/rajansharma-123/AUMRYX_CrowdSafe  ",
+      github: "https://github.com/rajansharma-123/AUMRYX_CrowdSafe",
     },
     {
       title: "Derma-Scan",
@@ -51,7 +51,7 @@ const ProjectsSection = () => {
       icon: Activity,
       image: DermaScanImage,
       live: "https://derma-scan-opal.vercel.app/login",
-      github: "https://github.com/rajansharma-123/DermaScan  ",
+      github: "https://github.com/rajansharma-123/DermaScan",
     },
   ];
 
