@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       highlight: "Healthcare Technology",
       icon: Activity,
       image: DermaScanImage,
-      live: "https://derma-scan-opal.vercel.app/login",
+      live: "https://derma-scan-opal.vercel.app",
       github: "https://github.com/rajansharma-123/DermaScan",
     },
   ];
